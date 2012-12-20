@@ -1,0 +1,10 @@
+<li>
+    <a href="#"><%= item.get('title') %></a>
+    <% if (item.get('children').length) { %>
+        <ul>
+            <% item.get('children').each(function(child) { %>
+                <li id="<%= view.getElementIdForItem(child) %>"></li>
+            <% }); %>
+        </ul>
+    <% } %>
+</li>
