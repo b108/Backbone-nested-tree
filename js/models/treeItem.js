@@ -14,7 +14,10 @@ define(['Backbone', 'models/treeItemCollection'], function(Backbone, TreeItemCol
         },
         isLast: function() {
             if (!this.collection) return true;
-            return this.collection.at( this.collection.length - 1 ) == this;
+            return this.collection.models[ this.collection.length - 1 ] == this;
+        },
+        hasChildren: function() {
+            return !!this.attributes.children.length;
         }
     });
 });

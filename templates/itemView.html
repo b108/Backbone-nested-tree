@@ -1,10 +1,17 @@
-<li>
-    <a href="#"><%= item.get('title') %></a>
+<% if (is_root) { %>
+<ul class="Container">
+<li class="Node ExpandOpen IsLast">
+<% } %>
+    <div class="Expand"></div>
+    <div class="Container"><%= item.get('title') %></div>
     <% if (item.get('children').length) { %>
-        <ul>
+        <ul class="Container">
             <% item.get('children').each(function(child) { %>
-                <li id="<%= view.getElementIdForItem(child) %>"></li>
+                <li class="Node <%= child.hasChildren() ? 'ExpandOpen' : 'ExpandLeaf' %><%= child.isLast() ? ' IsLast' : '' %>" id="<%= view.getElementIdForItem(child) %>"></li>
             <% }); %>
         </ul>
     <% } %>
+<% if (is_root) { %>
 </li>
+</ul>
+<% } %>
