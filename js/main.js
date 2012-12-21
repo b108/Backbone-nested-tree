@@ -2,8 +2,8 @@ require.config({
 	baseUrl:'./js',
 	paths: {
 		jQuery:"libs/jquery-1.8.3",
-        jQueryUI:"libs/jquery-ui-1.9.2.custom.min.js",
-        jQueryUINestedSortable:"libs/jquery.mjs.nestedSortable.js",
+        jQueryUI:"libs/jquery-ui-1.9.2.custom.min",
+        jQueryUINestedSortable:"libs/jquery.mjs.nestedSortable",
         tpl: "libs/tpl",
 		Backbone:'libs/backbone-min',
 		Underscore: "libs/underscore-min",

@@ -1,10 +1,17 @@
-define(['Backbone', 'jQuery', 'tpl!templates/itemView.html'], function(Backbone, $, tmpl) {
+define(['Backbone', 'jQueryUINestedSortable', 'tpl!templates/itemView.html'], function(Backbone, $, tmpl) {
     var ViewClass = Backbone.View.extend({
         initialize: function() {
             if ('boolean' == typeof this.options.is_root) {
                 this.is_root = this.options.is_root;
             }
             this.render();
+            if (this.is_root) {
+                this.$el.children().nestedSortable({
+                    listType: 'ul',
+                    items: 'li',
+                    handle: 'div'
+                });
+            }
         },
         is_root: true,
         render: function() {
